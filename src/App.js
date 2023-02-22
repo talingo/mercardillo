@@ -1,5 +1,5 @@
 import {Route, Routes} from "react-router-dom";
-import Home from "./pages/Home"
+import Welcome from "./pages/Welcome/Welcome"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <>
     <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Welcome />} />
     </Routes>
     </>
   );
