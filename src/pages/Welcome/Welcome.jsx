@@ -1,5 +1,5 @@
 import React from 'react'
-import WelcomeButton from './WelcomeButton'
+import WelcomeButton from '../../components/WelcomeButton'
 import video from '../../assets/welcome-page-video.mp4'
 import styles from './Welcome.module.css'
 
