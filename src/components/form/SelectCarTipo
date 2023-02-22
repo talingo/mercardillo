@@ -1,0 +1,17 @@
+import React from 'react';
+import { Form } from 'react-bootstrap';
+
+const SelectCarTipo = () => {
+   return (
+   <Form.Select >
+      <option>Seleccione el tipo.....</option>
+      <option value="Camioneta">Camioneta</option>
+      <option value="Fugoneta">Fugoneta</option>
+      <option value="4X4">4X4</option>
+      <option value="De Lujo">De Lujo</option>
+    </Form.Select>
+   
+  );
+}
+
+export default SelectCarTipo;
