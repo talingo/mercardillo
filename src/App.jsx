@@ -2,7 +2,7 @@ import {Route, Routes} from "react-router-dom";
 import Welcome from "./pages/Welcome/Welcome"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import FormCar from "./components/form/FormCar";
+import FormCar from "./components/Form/FormCar";
 
 function App() {
   return (
