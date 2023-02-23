@@ -14,12 +14,10 @@ const FormCar = () => {
          }
 
         setValidated(true);
+        alert("Debe hacer el 'Pago' para 'Crear el nuevo anuncio'");
+
         
     };
-    
-
-
-    
 
   return (
     <>
