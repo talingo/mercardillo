@@ -26,7 +26,6 @@ class FormCar extends React.Component{
         this.textCarAsientosHandler = this.textCarAsientosHandler.bind(this);
         this.filetCarHandler = this.filetCarHandler.bind(this);
         this.selectCarProvinciaHandler = this.selectCarProvinciaHandler.bind(this);
-        
     } 
         
     textCarClienteHandler(e){
@@ -50,9 +49,7 @@ class FormCar extends React.Component{
     filetCarHandler(e){
     this.setState({filetCar: e.target.value});
     }
-    // filetCarHandler(e){
-    //   this.setState({filetCar: e.target.value});
-    // }
+   
     selectCarProvinciaHandler(e){
     this.setState({selectCarProvincia: e.target.value});
     }
@@ -71,7 +68,7 @@ class FormCar extends React.Component{
             url: "http://localhost:8080/api/mercardillo/",
 
             data: {
-                nombre: this.state.textCarCliente,
+                nombre_cliente: this.state.textCarCliente,
                 asientos: this.state.textCarAsientos,
                 autonomia : this.state.textCarAutonomia,
                 precio : this.state.textCarPrecio,
@@ -89,10 +86,8 @@ class FormCar extends React.Component{
             .then((res) =>
                 console.log(res.data)
                 
-            )
-            .catch((err) => console.log(err));
-
-        };
+          )}
+        
     
         console.log(this.state);
         
@@ -110,14 +105,9 @@ class FormCar extends React.Component{
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formCarMarca">
-                {/* <Form.Label>Marca</Form.Label>
-                <Form.Control required type="text" placeholder="Entre la Marca"  name="textCarMarca" defaultValue={this.state.textCarMarca}  onChange={this.textCarMarcaHandler} /> */}
                 <Form.Select required name="selectCartipo" defaultValue={this.state.textCarMarca} onChange={this.textCarMarcaHandler}>
                     <option value="">Seleccione la marca.....</option>
-                    {/* <option value={1}>Ferrari</option>
-                    <option value={2}>Tesla</option>
-                    <option value={3}>Peugeot</option>
-                    <option value={4}>Ford</option> */}
+                   
                     <SelectCar  selectArray={["Ferrari","Tesla","Peugeot","Ford"]} />
                 </Form.Select>
             </Form.Group>
@@ -136,10 +126,7 @@ class FormCar extends React.Component{
                 <Form.Label>Tipo</Form.Label>
                 <Form.Select required name="selectCartipo" defaultValue={this.state.selectCartipo} onChange={this.selectCartipoHandler}>
                     <option value="">Seleccione el tipo.....</option>
-                    {/* <option value={1}>4 x 4</option>
-                    <option value={2}>Deportivo</option>
-                    <option value={3}>Mono Volumen</option>
-                    <option value={4}>De Lujo</option> */}
+                   
                     <SelectCar  selectArray={["4 x 4","Deportivo","Mono Volumen","De Lujo"]} />
 
                 </Form.Select>
@@ -159,10 +146,7 @@ class FormCar extends React.Component{
                 <Form.Label>Provincias</Form.Label>
                 <Form.Select required name="selectCarProvincia" defaultValue={this.state.selectCarProvincia} onChange={this.selectCarProvinciaHandler}>
                     <option value="">Seleccione la provincia.....</option>
-                    {/* <option value={1}>Asturias</option>
-                    <option value={2}>Barcelona</option>
-                    <option value={3}>Madrid</option>
-                    <option value={4}>Valencia</option> */}
+                   
                     <SelectCar  selectArray={["Arurias","Barcelona","Madrid","Valencia"]} />
                    
                 </Form.Select>

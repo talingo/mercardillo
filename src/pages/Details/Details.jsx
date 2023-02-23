@@ -1,18 +1,18 @@
 import React from 'react'
 import NavigatioBar from '../../components/NavigationBar/NavigationBar'
-import Card from '../../components/CarCard/Card'
-import "./home.scss";
+import ViewCard from '../../components/CarCard/ViewCard';
 import Footer from '../../components/Footer/Footer';
-import SearchBar from '../../components/SearchBar/SearchBar'
-const Home = () => {
+
+
+const Details = () => {
   return (
       <div>
         <div className="cont">
 
         <NavigatioBar/>
-        <SearchBar />
+        
         <div className= "d-flex justify-content-center"> 
-        <Card/> 
+        <ViewCard/> 
         <Footer/>
         </div>
         
@@ -21,4 +21,4 @@ const Home = () => {
   );
 }
 
-export default Home
+export default Details
