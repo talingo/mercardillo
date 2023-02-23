@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
+
 function CardCoche(props) {
   return (
     <Card className="text-center"style={{ width: '16rem' , heigth:'40rem'}}>
