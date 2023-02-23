@@ -24,23 +24,32 @@ const Card = () => {
 			<div className="text">
 				{elementos.map(elemento => (
 					<div className="cont1">
-						<div className="img">
+						
+						<div className="container-left">
 							<img
-								src="https://gomore.imgix.net/uploads/car_picture/image/676941/car_7fb87d3f-7efc-4057-995f-4d6fb272e173.jpg?ixlib=rails-2.1.2&fit=crop&w=770&h=513&auto=format%2Ccompress"
+								src="https://www.km77.com/vo/wp-content/uploads/2022/07/coche-portada-chevrolet.png"
 								alt=""
 							/>
 						</div>
-						<div key={elemento.id}>
-							<p>Usuario: {elemento.nombre_cliente}</p>
-							<p>Modelo: {elemento.marca.marca}</p>
-							<p>Asientos :{elemento.asientos}</p>
-							<p>Precio diario: {elemento.precio} € </p>
+						
+						<div key={elemento.id} className="datos">
 							<div>
-								<Link to="/cardid">
-									<button>Alquilar </button>{" "}
-								</Link>
+							<p><span>Usuario:</span> {elemento.nombre_cliente}</p>
+							<p><span>Modelo:</span> {elemento.marca.marca}</p>
+							<p><span>Asientos: </span>{elemento.asientos}</p>
+							</div>
+							<div>
+							<p><span>Provincia: </span> {elemento.provincia.provincia}</p>
+							<p><span>Tipo: </span> {elemento.tipo.tipo} </p>
+							<p><span>Autonomia: </span> {elemento.autonomia} km </p>
 							</div>
 						</div>
+								<Link to="/cardid">
+									<button>Alquilar<i class="fa-solid fa-arrow-right"></i></button>{" "}
+								</Link>
+						
+							
+							
 					</div>
 				))}
 			</div>
