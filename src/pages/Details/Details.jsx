@@ -1,6 +1,6 @@
 import React from 'react'
 import NavigatioBar from '../../components/NavigationBar/NavigationBar'
-import Card from '../../components/CarCard/Card'
+import ViewCard from '../../components/CarCard/ViewCard';
 import "./home.scss";
 import Footer from '../../components/Footer/Footer';
 
@@ -12,7 +12,7 @@ const Home = () => {
         <NavigatioBar/>
         <h1>Búsqueda</h1>
         <div className= "d-flex justify-content-center"> 
-        <Card/> 
+        <ViewCard/> 
         <Footer/>
         </div>
         
