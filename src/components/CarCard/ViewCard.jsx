@@ -1,6 +1,6 @@
 import React from 'react'
 import "./viewcard.scss";
-
+// import Details from '../../pages/Details/Details';
 
 
 const ViewCard = (props) => {
@@ -12,10 +12,13 @@ const ViewCard = (props) => {
                  {/* <img src={props.image} alt="" /> */}
             </div>
 
+            
             <div className='text2'> 
-                <h1>Mercedes</h1> 
-                <p>4 Asientos </p>
-                <h3>Precio $150 </h3>
+                <h1>Usuario: Victor</h1> 
+                <p>Modelo: Ferrari </p>
+                <h3>2 Asientos </h3>
+                <h3>Precio diario: 100€</h3>
+                <h3>Provincia: Madrid</h3>
                 <button>ALQUILAR</button>
             </div>
 

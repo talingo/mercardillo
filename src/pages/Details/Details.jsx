@@ -1,16 +1,16 @@
 import React from 'react'
 import NavigatioBar from '../../components/NavigationBar/NavigationBar'
 import ViewCard from '../../components/CarCard/ViewCard';
-import "./home.scss";
 import Footer from '../../components/Footer/Footer';
 
-const Home = () => {
+
+const Details = () => {
   return (
       <div>
         <div className="cont">
 
         <NavigatioBar/>
-        <h1>Búsqueda</h1>
+        
         <div className= "d-flex justify-content-center"> 
         <ViewCard/> 
         <Footer/>
@@ -21,4 +21,4 @@ const Home = () => {
   );
 }
 
-export default Home
+export default Details
