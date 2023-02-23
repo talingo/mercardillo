@@ -6,7 +6,7 @@ const NavigationBar = () => {
   return (
     <Navbar bg="primary" expand="lg" fixed="top">
         <Container>
-      <Navbar.Brand href="#"><Image src={logo} /></Navbar.Brand>
+      <Navbar.Brand href="#"><Image src={logo} style={{ width: '80px', height: 'auto' }}/></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="basic-navbar-nav justify-content-end">
         <Nav className="mr-auto" >
