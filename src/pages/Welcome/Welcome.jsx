@@ -6,7 +6,7 @@ import styles from './Welcome.module.css'
 const Welcome = () => {
   return (
       <div className={styles.welcome}>
-        <video className={styles.video} src={video} autoPlay loop='true' muted/>
+        <video className={styles.video} src={video} autoPlay loop={true} muted/>
         <section className={styles.button}>
           <WelcomeButton />
         </section>
