@@ -147,7 +147,7 @@ class FormCar extends React.Component{
                 <Form.Select required name="selectCarProvincia" defaultValue={this.state.selectCarProvincia} onChange={this.selectCarProvinciaHandler}>
                     <option value="">Seleccione la provincia.....</option>
                    
-                    <SelectCar  selectArray={["Arurias","Barcelona","Madrid","Valencia"]} />
+                    <SelectCar  selectArray={["Asturias","Barcelona","Madrid","Valencia"]} />
                    
                 </Form.Select>
             </Form.Group>
