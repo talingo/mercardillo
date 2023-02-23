@@ -1,8 +1,9 @@
 import React from 'react';
 import {Button, Form } from 'react-bootstrap';
 import './FormCar.css';
+import axios from "axios";
 //import SelectCarTipo from './SelectCarTipo';
-import { Component, useState } from 'react';
+// import { Component, useState } from 'react';
 
 
 
@@ -33,7 +34,8 @@ class FormCar extends React.Component{
                         textCarAutonomia: '',
                         selectCartipo: '', 
                         textCarAsientos: '',
-                        filetCar: ''
+                        filetCar: '',
+                        selectCarProvincia:''
                     };
             
             this.textCarClienteHandler = this.textCarClienteHandler.bind(this);
@@ -43,6 +45,7 @@ class FormCar extends React.Component{
             this.selectCartipoHandler = this.selectCartipoHandler.bind(this);
             this.textCarAsientosHandler = this.textCarAsientosHandler.bind(this);
             this.filetCarHandler = this.filetCarHandler.bind(this);
+            this.selectCarProvinciaHandler = this.selectCarProvinciaHandler.bind(this);
             
           } 
           //const [validated, setValidated] = useState(false);
@@ -67,6 +70,14 @@ class FormCar extends React.Component{
           filetCarHandler(e){
             this.setState({filetCar: e.target.value});
           }
+          // filetCarHandler(e){
+          //   this.setState({filetCar: e.target.value});
+          // }
+          selectCarProvinciaHandler(e){
+            this.setState({selectCarProvincia: e.target.value});
+          }
+
+
 
           submitFormHandler(e){
             e.preventDefault();
@@ -76,15 +87,41 @@ class FormCar extends React.Component{
                 e.stopPropagation();
             }
             else{
+        
                 
-                alert("Debe hacer el 'Pago' para 'Crear el nuevo anuncio'");
-            }
+    axios({
+      method: "POST",
+      url: "http://localhost:8080/api/mercardillo/",
+
+      data: {
+        nombre: this.state.textCarCliente,
+        asientos: this.state.textCarAsientos,
+        autonomia : this.state.textCarAutonomia,
+        precio : this.state.textCarPrecio,
+        tipo: {
+          idTipo: this.state.selectCartipo,      
+        },
+        marca:{
+          idMarca: this.state.textCarMarca,
+        },
+        provincia:{
+          idProvincia: 1
+        }
+      },
+    })
+      .then((res) =>
+        console.log(res.data)
+        // console.log(this.state.textCarMarca.value)
+
+      )
+      .catch((err) => console.log(err));
+
+  };
+            
             //setValidated(true);
             console.log(this.state);
-          }
-         
-        
-   // };
+          
+  }
    render() {
   return (
     <>
@@ -98,8 +135,15 @@ class FormCar extends React.Component{
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formCarMarca">
-                <Form.Label>Marca</Form.Label>
-                <Form.Control required type="text" placeholder="Entre la Marca"  name="textCarMarca" defaultValue={this.state.textCarMarca}  onChange={this.textCarMarcaHandler} />
+                {/* <Form.Label>Marca</Form.Label>
+                <Form.Control required type="text" placeholder="Entre la Marca"  name="textCarMarca" defaultValue={this.state.textCarMarca}  onChange={this.textCarMarcaHandler} /> */}
+                <Form.Select required name="selectCartipo" defaultValue={this.state.textCarMarca} onChange={this.textCarMarcaHandler}>
+                    <option value="">Seleccione la marca.....</option>
+                    <option value={1}>Ferrari</option>
+                    <option value={2}>Tesla</option>
+                    <option value={3}>Peugeot</option>
+                    <option value={4}>Ford</option>
+                </Form.Select>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formCardPrecio" >
@@ -116,10 +160,10 @@ class FormCar extends React.Component{
                 <Form.Label>Tipo</Form.Label>
                 <Form.Select required name="selectCartipo" defaultValue={this.state.selectCartipo} onChange={this.selectCartipoHandler}>
                     <option value="">Seleccione el tipo.....</option>
-                    <option value="Camioneta">Camioneta</option>
-                    <option value="Fugoneta">Fugoneta</option>
-                    <option value="4X4">4X4</option>
-                    <option value="De Lujo">De Lujo</option>
+                    <option value={1}>4 x 4</option>
+                    <option value={2}>Deportivo</option>
+                    <option value={3}>Mono Volumen</option>
+                    <option value={4}>De Lujo</option>
                 </Form.Select>
             </Form.Group>
 
@@ -131,6 +175,17 @@ class FormCar extends React.Component{
             <Form.Group controlId="formCarFile" className="mb-3">
                 <Form.Label>Foto</Form.Label>
                 <Form.Control required type="file" name="filetCar" defaultValue={this.state.filetCar}  onChange={this.filetCarHandler} />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formCarProvincia">
+                <Form.Label>Provincias</Form.Label>
+                <Form.Select required name="selectCarProvincia" defaultValue={this.state.selectCarProvincia} onChange={this.selectCarProvinciaHandler}>
+                    <option value="">Seleccione la provincia.....</option>
+                    <option value={1}>Asturias</option>
+                    <option value={2}>Barcelona</option>
+                    <option value={3}>Madrid</option>
+                    <option value={4}>Valencia</option>
+                </Form.Select>
             </Form.Group>
 
             <Button variant="primary" type="submit">
