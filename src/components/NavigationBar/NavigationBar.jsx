@@ -30,11 +30,14 @@ const NavigationBar = () => {
 					<Nav className="mr-auto">
 						<NavDropdown
 							title="Menu"
-							id="basic-nav-dropdown">
+							id="basic-nav-dropdown"
+						>
 							<NavDropdown.Item href="#">Anuncios</NavDropdown.Item>
-							<NavDropdown.Item href="#">
-								Publica tu Anuncio
-							</NavDropdown.Item>
+							<Link to="/form">
+								<NavDropdown.Item href="/home">
+									Publica tu Anuncio
+								</NavDropdown.Item>
+							</Link>
 							<NavDropdown.Item href="#">
 								Sobre Nosotros
 							</NavDropdown.Item>

@@ -94,7 +94,7 @@ class FormCar extends React.Component{
       url: "http://localhost:8080/api/mercardillo/",
 
       data: {
-        nombre: this.state.textCarCliente,
+        nombre_cliente: this.state.textCarCliente,
         asientos: this.state.textCarAsientos,
         autonomia : this.state.textCarAutonomia,
         precio : this.state.textCarPrecio,
@@ -105,7 +105,7 @@ class FormCar extends React.Component{
           idMarca: this.state.textCarMarca,
         },
         provincia:{
-          idProvincia: 1
+          idProvincia: this.state.selectCarProvincia,
         }
       },
     })

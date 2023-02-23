@@ -3,7 +3,7 @@ import "./viewcard.scss";
 // import Details from '../../pages/Details/Details';
 
 
-const ViewCard = (props) => {
+const ViewCard = () => {
   return (
     <div>
         <div className='container2'>
