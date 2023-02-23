@@ -3,9 +3,7 @@ import Welcome from "./pages/Welcome/Welcome"
 import Home from "./pages/Home/Home"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
-
-
-
+// import FormCar from "./components/Form/FormCar";
 
 function App() {
   return (
