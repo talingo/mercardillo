@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, Form } from 'react-bootstrap';
 import './FormCar.css';
-import SelectCarTipo from './SelectCarTipo';
+//import SelectCarTipo from './SelectCarTipo';
 import { Component, useState } from 'react';
 
 const FormCar = () => {
@@ -14,9 +14,31 @@ const FormCar = () => {
          }
 
         setValidated(true);
-        
+        //alert('An essay was submitted: ' + this.state.value);
+        // event.preventDefault();
+        // for (let ref in this.refs) {
+        //     console.log(ref, '=>', this.refs[ref].value);
+        //   } 
+
+        /*constructor(props){
+            super(props);
+            this.state={textCarCliente: '', textCarMarca: ''};
+            
+            this.textCarClienteHandler = this.textCarClienteHandler.bind(this);
+            this.textCarMarcaHandler = this.textCarMarcaHandler.bind(this);
+          }
+          textCarClienteHandler(e){
+            this.setState({textCarCliente: event.target.value});
+          }
+          textCarMarcaHandler(e){
+            this.setState({textCarMarca: event.target.value});
+          }
+          submitFormHandler(e){
+            e.preventDefault();
+            console.log(this.state);
+          }
+          */
     };
-    
 
 
     
@@ -49,7 +71,7 @@ const FormCar = () => {
 
             <Form.Group className="mb-3" controlId="formCarTipo">
                 <Form.Label>Tipo</Form.Label>
-                <SelectCarTipo/>
+                <Form.Control required type="text" placeholder="Entre el Tipo" name="textCarTipo" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formCarAsientos">
