@@ -1,5 +1,6 @@
 import {Route, Routes} from "react-router-dom";
 import Welcome from "./pages/Welcome/Welcome"
+import Home from "./pages/Home/Home"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import CardCoche from "./components/card/CardCoche";
@@ -15,7 +16,9 @@ function App() {
         <Route path="/card" element={<CardCoche/>} />
         <Route path="/card2" element={<Card/>} />
         <Route path="/cardid" element={<ViewCard/>} />
+        <Route path="/home" element={<Home />} />
     </Routes>
+
     </>
   );
 }
