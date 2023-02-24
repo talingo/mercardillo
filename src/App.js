@@ -8,8 +8,11 @@ import Filters from "./components/Filters/filters";
 function App() {
   return (
     <>
-        <SearchBar></SearchBar>
-        <Filters></Filters>
+    <Routes>
+        {/* <Route path="/" element={<Welcome />} /> */}
+        <Route path="/search" element={<SearchBar />} />
+        <Route path="/" element={<Filters />} />
+    </Routes>
     </>
   );
 }
